@@ -84,7 +84,7 @@ func main() {
         Promisc: true,
     }
 
-    packets, err := pcaplite.Capture("en0", opts)
+    packets, err := pcaplite.Capture("en0", opts) //en0 macOS interface
     if err != nil {
         log.Fatal(err)
     }
