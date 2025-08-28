@@ -120,5 +120,16 @@ func main() {
 [21:09:31] fe80::8001:51ff:fe3b:55ce:5353 -> ff02::fb:5353 | UDP | 139 bytes
 ```
 
+---
+
+## ✍️ From the Author
+
+Hi! I’m the author of **go-pcaplite**.  
+
+I also have a **CLI utility** for deeper traffic analysis.  
+You can check it out here: [go-pcaplite CLI](https://github.com/alexcfv/go-sniffer)
+
+---
+
 ## 📜 License  
 MIT © 2025 [alexcfv](https://github.com/alexcfv)
