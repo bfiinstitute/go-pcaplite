@@ -127,7 +127,7 @@ func main() {
 Hi! I’m the author of **go-pcaplite**.  
 
 I also have a **CLI utility** for deeper traffic analysis.  
-You can check it out here: [go-pcaplite CLI](https://github.com/alexcfv/go-sniffer)
+You can check it out here: [CLI sniffer](https://github.com/alexcfv/go-sniffer)
 
 ---
 
