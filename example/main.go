@@ -9,7 +9,7 @@ import (
 
 func main() {
 	opts := pcaplite.CaptureOptions{
-		Filter:  "tcp and port 443", // only HTTPS
+		Filter:  "ip", // all IP traffic
 		Promisc: true,
 	}
 
@@ -24,5 +24,10 @@ func main() {
 			p.SrcIP, p.SrcPort,
 			p.DstIP, p.DstPort,
 			p.Protocol, p.Length)
+
+		// print DNS or ARP inf
+		for k, v := range p.Extra {
+			fmt.Printf("  %s: %s\n", k, v)
+		}
 	}
 }
