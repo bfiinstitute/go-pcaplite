@@ -9,7 +9,7 @@ import (
 
 func main() {
 	opts := pcaplite.CaptureOptions{
-		Filter:  "ip", // all IP traffic
+		Filter:  "tcp port 443 or udp or arp or icmp", // HTTPS + other protocols
 		Promisc: true,
 	}
 

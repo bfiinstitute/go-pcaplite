@@ -38,6 +38,14 @@ func parsePacket(packet gopacket.Packet) Packet {
 		p.DstPort = strconv.Itoa(int(tcp.DstPort))
 		p.PayloadSize = len(tcp.Payload)
 		p.Protocol = "TCP"
+
+		// Take SNI for HTTPS
+		if p.DstPort == "443" || p.SrcPort == "443" {
+			if sni := extractSNI(tcp.Payload); sni != "" {
+				p.Extra["TLS_SNI"] = sni
+			}
+		}
+
 	} else if udpLayer := packet.Layer(layers.LayerTypeUDP); udpLayer != nil {
 		udp := udpLayer.(*layers.UDP)
 		p.SrcPort = strconv.Itoa(int(udp.SrcPort))
