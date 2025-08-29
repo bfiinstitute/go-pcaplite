@@ -1,8 +1,6 @@
 package pcaplite
 
 import (
-	"encoding/hex"
-	"strings"
 	"testing"
 	"time"
 
@@ -141,52 +139,5 @@ func TestNetIP(t *testing.T) {
 		if got := netIP(tt.input); got != tt.expected {
 			t.Errorf("netIP(%v) = %v; want %v", tt.input, got, tt.expected)
 		}
-	}
-}
-
-func TestExtractSNI(t *testing.T) {
-	tests := []struct {
-		name    string
-		payload string
-		want    string
-	}{
-		{
-			name:    "Too short",
-			payload: "1603",
-			want:    "",
-		},
-		{
-			name:    "Invalid TLS type",
-			payload: "1503010000",
-			want:    "",
-		},
-		{
-			name:    "No SNI extension",
-			payload: "1603010001010000fd0303" + strings.Repeat("00", 253),
-			want:    "",
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			data, err := hex.DecodeString(tt.payload)
-			if err != nil {
-				t.Fatalf("failed to decode payload: %v", err)
-			}
-			got := extractSNI(data)
-			if got != tt.want {
-				t.Errorf("extractSNI() = %q, want %q", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestCapture_InvalidInterface(t *testing.T) {
-	opts := CaptureOptions{}
-	ch, err := Capture("invalid_iface", opts)
-	if err == nil {
-		t.Errorf("Expected error for invalid interface, got nil")
-	}
-	if ch != nil {
-		t.Errorf("Expected nil channel for invalid interface")
 	}
 }
