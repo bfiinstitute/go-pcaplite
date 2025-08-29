@@ -2,7 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/alexcfv/go-pcaplite.svg)](https://pkg.go.dev/github.com/alexcfv/go-pcaplite)
 [![Go Report Card](https://goreportcard.com/badge/github.com/alexcfv/go-pcaplite)](https://goreportcard.com/report/github.com/alexcfv/go-pcaplite)
-[![codecov](https://codecov.io/gh/alexcfv/go-pcaplite/branch/main/graph/badge.svg)](https://codecov.io/gh/alexcfv/go-pcaplite)
+[![codecov](https://codecov.io/github/alexcfv/go-pcaplite/graph/badge.svg?token=ZHZMTJI4D7)](https://codecov.io/github/alexcfv/go-pcaplite)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-blue)
 ![Go Version](https://img.shields.io/github/go-mod/go-version/alexcfv/go-pcaplite)
