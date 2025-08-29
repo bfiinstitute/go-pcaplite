@@ -38,6 +38,33 @@ func TestCapture_TableDriven(t *testing.T) {
 			expectNil: false,
 		},
 		{
+			name:  "Valid interface with UDP filter (skipped if no root)",
+			iface: "lo",
+			opts: CaptureOptions{
+				Filter: "udp",
+			},
+			wantErr:   false,
+			expectNil: false,
+		},
+		{
+			name:  "Valid interface with ICMP filter (skipped if no root)",
+			iface: "lo",
+			opts: CaptureOptions{
+				Filter: "icmp",
+			},
+			wantErr:   false,
+			expectNil: false,
+		},
+		{
+			name:  "Valid interface with complex BPF filter (skipped if no root)",
+			iface: "lo",
+			opts: CaptureOptions{
+				Filter: "tcp and port 80",
+			},
+			wantErr:   false,
+			expectNil: false,
+		},
+		{
 			name:  "Valid interface with invalid filter (skipped if no root)",
 			iface: "lo",
 			opts: CaptureOptions{
