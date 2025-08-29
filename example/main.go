@@ -13,7 +13,7 @@ func main() {
 		Promisc: true,
 	}
 
-	packets, err := pcaplite.Capture("en0", opts)
+	packets, err := pcaplite.Capture("eth0", opts) // For linux only
 	if err != nil {
 		log.Fatal(err)
 	}
