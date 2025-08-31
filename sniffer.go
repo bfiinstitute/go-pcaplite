@@ -24,12 +24,12 @@ func Capture(iface string, opts CaptureOptions) (<-chan Packet, error) {
 
 	handle, err := pcap.OpenLive(iface, opts.SnapLen, opts.Promisc, pcap.BlockForever)
 	if err != nil {
-		return nil, fmt.Errorf("ошибка открытия интерфейса: %w", err)
+		return nil, fmt.Errorf("interface error: %w", err)
 	}
 
 	if opts.Filter != "" {
 		if err := handle.SetBPFFilter(opts.Filter); err != nil {
-			return nil, fmt.Errorf("ошибка фильтра: %w", err)
+			return nil, fmt.Errorf("аfilter error: %w", err)
 		}
 	}
 
