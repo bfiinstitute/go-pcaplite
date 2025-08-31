@@ -106,6 +106,28 @@ func main() {
 }
 ```
 
+---
+
+## ⚙️ Packet structure:
+
+```golang
+type Packet struct {
+    Timestamp   time.Time          // The exact time when the packet was captured
+    SrcIP       string             // Source IP address of the packet
+    DstIP       string             // Destination IP address of the packet
+    SrcMAC      string             // Source MAC address of the packet
+    DstMAC      string             // Destination MAC address of the packet
+    Protocol    string             // Network protocol used (e.g., TCP, UDP, ICMP)
+    SrcPort     string             // Source port number (if applicable, e.g., TCP/UDP)
+    DstPort     string             // Destination port number (if applicable, e.g., TCP/UDP)
+    Length      int                // Total length of the entire packet in bytes
+    PayloadSize int                // Size of the actual payload (data) in bytes
+    Extra       map[string]string  // Additional parsed information or metadata
+}
+```
+
+---
+
 ## 📦 Output:
 
 ```bash
